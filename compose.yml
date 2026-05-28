@@ -5,10 +5,14 @@ services:
    image: gangireddymallikarjunareddy/automation:db
    ports:
      - "3306:3306"
+   deploy:
+     replicas: 3
 
  application:
    image: gangireddymallikarjunareddy/automation:app
    ports:
      - "1111:8080"
+   deploy:
+     replicas: 3
    depends_on:
      - "devopsdb"
